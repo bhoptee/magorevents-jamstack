@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+title: "Magor Events Group - The Magor Benefice Churchmen's Society"
+description: "Magor Events Group runs the annual May Fayre and Frost Fayre in Magor, raising funds for local charities."
+---
+
+{# ===== EVENT HERO SECTIONS ===== #}
+{% for event in events.items %}
+{% if event.featured_home %}
+<section id="{{ event.id }}" class="hero hero-home {{ event.bg_class }}{% if event.text_style == 'secondary' %} secondary{% endif %}">
+
+  {% if event.has_video and event.video_src %}
+  <div class="video-container">
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="{{ event.video_src }}" type="video/mp4">
+    </video>
+  </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-lg-6 text order-2 order-lg-1">
+
+        <h1{% if event.text_style == 'secondary' %} class="secondary"{% endif %}>{{ event.name }}</h1>
+        <h2{% if event.text_style == 'secondary' %} class="secondary"{% endif %}>{{ event.date }}</h2>
+        <p class="{% if event.text_style == 'secondary' %}secondary {% endif %}hero-text">
+          {% if event.text_style == 'secondary' %}<strong>{% endif %}
+          {{ event.description }}
+          {% if event.text_style == 'secondary' %}</strong>{% endif %}
+        </p>
+
+        {% set btnClass = "btn-tertiary" if event.text_style == 'secondary' else "btn-primary" %}
+
+        {% if event.show_stalls %}
+        <div class="CTA-events">
+          <a href="{{ site.stalls_url }}" class="btn {{ btnClass }}">Book a stall</a>
+        </div>
+        {% endif %}
+
+        {% if event.show_ads %}
+        <div class="CTA-events">
+          <a href="mailto:{{ site.ads_email }}" class="btn {{ btnClass }}">Book a newspaper ad</a>
+        </div>
+        {% endif %}
+
+        {% if event.show_involved %}
+        <div class="CTA">
+          <a href="/events#get-involved" class="btn {{ btnClass }}">Get involved</a>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endfor %}
+
+
+{# ===== ABOUT US ===== #}
+<section class="about-us bg-gray" id="about-us">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 order-1 order-lg-2">
+        <img alt="{{ site.name }}" class="img-sized img-fluid" src="/img/magor-events-800.png">
+      </div>
+      <div class="col-lg-8 order-1 order-lg-2">
+        <h2>{{ site.homepage_about_heading }}</h2>
+        <p class="lead col-lg-10">{{ site.homepage_about_text | replace("\n\n", "<br><br>") | safe }}</p>
+        <p><a class="btn btn-outline-primary" href="/about-us">What we do</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{# ===== CHARITIES GRID ===== #}
+<section class="extra-features bg-primary" id="extra-features">
+  <div class="container text-center">
+    <header>
+      <h2>{{ charities.heading }}</h2>
+      <div class="row">
+        <p class="lead col-lg-8 mx-auto">{{ charities.description }}</p>
+      </div>
+    </header>
+    <div class="grid row">
+      {% for charity in charities.items %}
+      <div class="item col-lg-4 col-md-6">
+        <div class="icon">
+          <img alt="{{ charity.name }}" class="img-fluid" src="{{ charity.logo }}">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{# ===== GET INVOLVED ===== #}
+<section class="about-us bg-gold" id="get-involved">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <img alt="Magor Churchmen Santas" class="img-fluid" src="/img/santas.jpg">
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2">
+        <h2>{{ site.homepage_get_involved_heading }}</h2>
+        <p class="lead col-lg-10">{{ site.homepage_get_involved_text }}</p>
+        <a class="btn btn-outline-primary" href="/about-us">What we do</a>
+      </div>
+    </div>
+  </div>
+</section>

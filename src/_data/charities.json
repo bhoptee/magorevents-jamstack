@@ -1,0 +1,18 @@
+{
+  "heading": "Donations to Charities & Good Causes",
+  "description": "At our March 2019 meeting the Magor Churchmen's Society donated over £8000 to charities and good causes. We are most grateful to all of our supporters who helped to make this possible.",
+  "items": [
+    { "name": "Alzheimer's Society", "logo": "/img/alzheimers.png" },
+    { "name": "Welsh Ambulance Service", "logo": "/img/ambulance.png" },
+    { "name": "Girl Guides", "logo": "/img/girl-guides.png" },
+    { "name": "Kids Cancer Charity", "logo": "/img/kids-cancer.png" },
+    { "name": "LATCH", "logo": "/img/latch.png" },
+    { "name": "Macmillan Cancer Support", "logo": "/img/macmillan.png" },
+    { "name": "Magor School", "logo": "/img/magor-school.png" },
+    { "name": "Scouts", "logo": "/img/scouts.png" },
+    { "name": "Tenovus Cancer Care", "logo": "/img/tenovus.png" },
+    { "name": "Ty Hafan", "logo": "/img/ty-hafan.png" },
+    { "name": "Undy School", "logo": "/img/undy-school.png" },
+    { "name": "WaterAid", "logo": "/img/water-aid.png" }
+  ]
+}

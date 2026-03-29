@@ -1,0 +1,98 @@
+---
+layout: layouts/base.njk
+title: "About Us – Magor Events Group"
+description: "Learn about Magor Events Group – a not-for-profit organisation raising funds for local charities through the May Fayre and Frost Fayre."
+permalink: /about-us/
+---
+
+{# ===== TOP / MISSION SECTION ===== #}
+<section class="top-section">
+  <div class="container">
+
+    <div class="row block">
+      <div class="col-lg-9">
+        <ul class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active">About us</li>
+        </ul>
+        <h1>{{ about.page_title }}</h1>
+        <h2>{{ about.page_subtitle }}</h2>
+        <p class="lead">{{ about.mission | replace("\n\n", "<br><br>") | safe }}</p>
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center block">
+      <div class="col-lg-6 image">
+        <img src="/img/frost-fayre1.jpg" alt="Frost Fayre" class="img-fluid">
+      </div>
+      <div class="col-lg-6 text">
+        <p>{{ about.community_text }}</p>
+      </div>
+    </div>
+
+    <div class="row d-flex align-items-center block">
+      <div class="col-lg-9">
+        <h2>{{ about.who_benefits_heading }}</h2>
+        <p class="lead">{{ about.who_benefits_intro }}</p>
+        <p>{{ about.who_benefits_body }}</p>
+      </div>
+      <div class="col-lg-6 text order-2 order-lg-1">
+        <p>{{ about.donations_detail }}</p>
+      </div>
+      <div class="col-lg-6 image order-1 order-lg-2">
+        <img src="/img/frost-fayre2.jpg" alt="Frost Fayre" class="img-fluid">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+{# ===== GET INVOLVED ===== #}
+<section id="get-involved" class="about-us bg-gold">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <img src="/img/santas.jpg" alt="Magor Churchmen Santas" class="img-fluid">
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2">
+        <h2>{{ about.get_involved_heading }}</h2>
+        <p class="lead col-lg-10">{{ about.get_involved_text }}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-9">
+      <p class="lead">{{ about.get_involved_detail | replace("\n\n", "</p><p>") | safe }}</p>
+      <p class="lead">
+        If you can spare a few hours please contact Kevin, our secretary, by emailing
+        <a href="mailto:{{ site.secretary_email }}">{{ site.secretary_email }}</a>
+        or come to one of our meetings at {{ about.meeting_venue }} on the {{ about.meeting_day }} at {{ about.meeting_time }}.
+      </p>
+      <h2>Next meeting: <span id="next-meeting"></span></h2>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Calculate the second Monday of the current (or next) month
+  function getNextSecondMonday() {
+    var today = new Date();
+    function secondMonday(year, month) {
+      var d = new Date(year, month, 1);
+      var offset = (8 - d.getDay()) % 7; // days until first Monday
+      d.setDate(1 + offset + 7);         // first Monday + 7 = second Monday
+      return d;
+    }
+    var candidate = secondMonday(today.getFullYear(), today.getMonth());
+    if (candidate <= today) {
+      var next = today.getMonth() === 11
+        ? secondMonday(today.getFullYear() + 1, 0)
+        : secondMonday(today.getFullYear(), today.getMonth() + 1);
+      candidate = next;
+    }
+    return candidate.toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  document.getElementById('next-meeting').textContent = getNextSecondMonday();
+</script>

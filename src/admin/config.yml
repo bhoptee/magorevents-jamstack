@@ -1,0 +1,225 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+
+  # ─────────────────────────────────────────────
+  # EVENTS
+  # ─────────────────────────────────────────────
+  - label: "Events"
+    name: "events"
+    files:
+      - label: "All Events"
+        name: "all_events"
+        file: "src/_data/events.json"
+        fields:
+          - label: "Events"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} – {{fields.date}}"
+            fields:
+              - label: "ID (URL slug, no spaces)"
+                name: "id"
+                widget: "string"
+                hint: "e.g. may-fayre or frost-fayre-2026. Used as the section anchor."
+              - label: "Event Name"
+                name: "name"
+                widget: "string"
+              - label: "Date"
+                name: "date"
+                widget: "string"
+                hint: "e.g. Monday 4th May, 2026"
+              - label: "Description"
+                name: "description"
+                widget: "text"
+              - label: "Background Style"
+                name: "bg_class"
+                widget: "select"
+                options:
+                  - label: "Frost Fayre (dark)"
+                    value: "bg-hero-frost"
+                  - label: "May Fayre (light)"
+                    value: "bg-hero-may"
+                default: "bg-hero-may"
+              - label: "Has Video Background?"
+                name: "has_video"
+                widget: "boolean"
+                default: false
+              - label: "Video URL"
+                name: "video_src"
+                widget: "string"
+                required: false
+                hint: "Full URL to the .mp4 file. Leave blank if no video."
+              - label: "Text Style"
+                name: "text_style"
+                widget: "select"
+                options:
+                  - label: "Dark background (white text)"
+                    value: "secondary"
+                  - label: "Light background (dark text)"
+                    value: "default"
+                default: "default"
+              - label: "Show on Homepage?"
+                name: "featured_home"
+                widget: "boolean"
+                default: true
+              - label: "Show 'Book a stall' button?"
+                name: "show_stalls"
+                widget: "boolean"
+                default: true
+              - label: "Show 'Book a newspaper ad' button?"
+                name: "show_ads"
+                widget: "boolean"
+                default: true
+              - label: "Show 'Get involved' button?"
+                name: "show_involved"
+                widget: "boolean"
+                default: true
+
+  # ─────────────────────────────────────────────
+  # CHARITIES
+  # ─────────────────────────────────────────────
+  - label: "Charities"
+    name: "charities"
+    files:
+      - label: "Charities & Good Causes"
+        name: "charities_list"
+        file: "src/_data/charities.json"
+        fields:
+          - label: "Section Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Section Description"
+            name: "description"
+            widget: "text"
+          - label: "Charities"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Charity Name"
+                name: "name"
+                widget: "string"
+              - label: "Logo Image"
+                name: "logo"
+                widget: "image"
+
+  # ─────────────────────────────────────────────
+  # SITE SETTINGS
+  # ─────────────────────────────────────────────
+  - label: "Site Settings"
+    name: "settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "src/_data/site.json"
+        fields:
+          - label: "Site Name"
+            name: "name"
+            widget: "string"
+          - label: "Tagline"
+            name: "tagline"
+            widget: "string"
+          - label: "Contact Email"
+            name: "email"
+            widget: "string"
+          - label: "Secretary Email"
+            name: "secretary_email"
+            widget: "string"
+          - label: "Ads Email"
+            name: "ads_email"
+            widget: "string"
+          - label: "Stalls Booking URL"
+            name: "stalls_url"
+            widget: "string"
+          - label: "Ads Booking URL"
+            name: "ads_url"
+            widget: "string"
+          - label: "Charity Registration Number"
+            name: "charity_reg"
+            widget: "string"
+          - label: "Google Tag Manager ID"
+            name: "gtm_id"
+            widget: "string"
+            required: false
+          - label: "Facebook URL"
+            name: "facebook"
+            widget: "string"
+            required: false
+          - label: "Twitter / X URL"
+            name: "twitter"
+            widget: "string"
+            required: false
+          - label: "Instagram URL"
+            name: "instagram"
+            widget: "string"
+            required: false
+          - label: "Homepage – About Section Heading"
+            name: "homepage_about_heading"
+            widget: "string"
+          - label: "Homepage – About Section Text"
+            name: "homepage_about_text"
+            widget: "text"
+          - label: "Homepage – Get Involved Heading"
+            name: "homepage_get_involved_heading"
+            widget: "string"
+          - label: "Homepage – Get Involved Text"
+            name: "homepage_get_involved_text"
+            widget: "text"
+
+  # ─────────────────────────────────────────────
+  # ABOUT PAGE
+  # ─────────────────────────────────────────────
+  - label: "About Page"
+    name: "about"
+    files:
+      - label: "About Page Content"
+        name: "about_content"
+        file: "src/_data/about.json"
+        fields:
+          - label: "Page Title"
+            name: "page_title"
+            widget: "string"
+          - label: "Page Subtitle"
+            name: "page_subtitle"
+            widget: "string"
+          - label: "Mission Statement"
+            name: "mission"
+            widget: "text"
+          - label: "Community Involvement Text"
+            name: "community_text"
+            widget: "text"
+          - label: "Who Benefits – Heading"
+            name: "who_benefits_heading"
+            widget: "string"
+          - label: "Who Benefits – Intro"
+            name: "who_benefits_intro"
+            widget: "text"
+          - label: "Who Benefits – Body"
+            name: "who_benefits_body"
+            widget: "text"
+          - label: "Donations Detail"
+            name: "donations_detail"
+            widget: "text"
+          - label: "Get Involved Heading"
+            name: "get_involved_heading"
+            widget: "string"
+          - label: "Get Involved Summary"
+            name: "get_involved_text"
+            widget: "text"
+          - label: "Get Involved Detail"
+            name: "get_involved_detail"
+            widget: "text"
+          - label: "Meeting Venue"
+            name: "meeting_venue"
+            widget: "string"
+          - label: "Meeting Day"
+            name: "meeting_day"
+            widget: "string"
+          - label: "Meeting Time"
+            name: "meeting_time"
+            widget: "string"

@@ -1,0 +1,19 @@
+[build]
+  publish = "_site"
+  command = "npm run build"
+
+[dev]
+  command = "npm start"
+  port = 8080
+
+[[redirects]]
+  from = "/stalls"
+  to = "https://forms.gle/JqPeP8bV8PkTYtyZ6"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/ads"
+  to = "https://goo.gl/forms/eMGwscbqQbvOoO4y2"
+  status = 302
+  force = true

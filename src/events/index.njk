@@ -1,0 +1,71 @@
+---
+layout: layouts/base.njk
+title: "Events – Magor Events Group"
+description: "Our annual May Fayre and Frost Fayre events in Magor Square."
+permalink: /events/
+---
+
+{# ===== EVENT HERO SECTIONS ===== #}
+{% for event in events.items %}
+<section id="{{ event.id }}" class="hero hero-home {{ event.bg_class }}{% if event.text_style == 'secondary' %} secondary{% endif %}">
+
+  {% if event.has_video and event.video_src %}
+  <div class="video-container">
+    <video autoplay loop muted playsinline class="video-bg">
+      <source src="{{ event.video_src }}" type="video/mp4">
+    </video>
+  </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-lg text-center">
+
+        <h1{% if event.text_style == 'secondary' %} class="secondary"{% endif %}>{{ event.name }}</h1>
+        <h2{% if event.text_style == 'secondary' %} class="secondary"{% endif %}>{{ event.date }}</h2>
+        <p class="{% if event.text_style == 'secondary' %}secondary {% endif %}hero-text-events">
+          {{ event.description }}
+        </p>
+
+        <h3{% if event.text_style == 'secondary' %} class="secondary"{% endif %}>Want to be a part of it?</h3>
+
+        {% set btnClass = "btn-tertiary" if event.text_style == 'secondary' else "btn-primary" %}
+
+        {% if event.show_stalls %}
+        <div class="CTA-events d-inline-block">
+          <a href="{{ site.stalls_url }}" class="btn {{ btnClass }}">Book a stall</a>
+        </div>
+        {% endif %}
+
+        {% if event.show_ads %}
+        <div class="CTA-events d-inline-block">
+          <a href="mailto:{{ site.ads_email }}" class="btn {{ btnClass }}">Book a newspaper ad</a>
+        </div>
+        {% endif %}
+
+        <div class="CTA-events d-inline-block">
+          <a href="#get-involved" class="btn {{ btnClass }}">Become a member</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+{% endfor %}
+
+
+{# ===== GET INVOLVED ===== #}
+<section id="get-involved" class="about-us bg-gold">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2">
+        <img src="/img/santas.jpg" alt="Magor Churchmen Santas" class="img-fluid">
+      </div>
+      <div class="col-lg-6 order-1 order-lg-2">
+        <h2>Get Involved</h2>
+        <p class="lead col-lg-10">{{ site.homepage_get_involved_text }}</p>
+        <a href="/about-us" class="btn btn-outline-primary">What we do</a>
+      </div>
+    </div>
+  </div>
+</section>
