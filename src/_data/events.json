@@ -1,46 +1,32 @@
 {
   "items": [
     {
-      "id": "frost-fayre",
-      "name": "Frost Fayre",
-      "date": "Saturday 6th December, 2025",
-      "description": "We're thrilled to announce that we'll be back in Magor Square for our annual Frost Fayre on Saturday 6th December. Hope to see you all there!",
-      "bg_class": "bg-hero-frost",
-      "has_video": true,
-      "video_src": "https://www.magorevents.co.uk/img/frost-fayre.mp4",
-      "text_style": "secondary",
+      "video_src": "",
+      "show_involved": true,
+      "name": "May Fayre",
+      "show_ads": true,
+      "date": "Monday 4th May, 2026",
       "featured_home": true,
       "show_stalls": true,
-      "show_ads": true,
-      "show_involved": true
-    },
-    {
+      "has_video": false,
       "id": "may-fayre",
-      "name": "May Fayre",
-      "date": "Monday 4th May, 2026",
       "description": "We're thrilled to announce that we'll be back in Magor Square for our annual May Fayre on Monday 4th May. Hope to see you all there!",
       "bg_class": "bg-hero-may",
-      "has_video": false,
-      "video_src": "",
-      "text_style": "default",
-      "featured_home": true,
-      "show_stalls": true,
-      "show_ads": true,
-      "show_involved": true
+      "text_style": "default"
     },
     {
-      "id": "frost-fayre-2026",
-      "name": "Frost Fayre",
-      "date": "Saturday 5th December, 2026",
-      "description": "We're thrilled to announce that we'll be back in Magor Square for our annual Frost Fayre on Saturday 5th December. Hope to see you all there!",
-      "bg_class": "bg-hero-frost",
-      "has_video": false,
       "video_src": "",
-      "text_style": "secondary",
+      "show_involved": true,
+      "name": "Frost Fayre",
+      "show_ads": true,
+      "date": "Saturday 5th December, 2026",
       "featured_home": true,
       "show_stalls": true,
-      "show_ads": true,
-      "show_involved": true
+      "has_video": false,
+      "id": "frost-fayre-2026",
+      "description": "We're thrilled to announce that we'll be back in Magor Square for our annual Frost Fayre on Saturday 5th December. Hope to see you all there!",
+      "bg_class": "bg-hero-frost",
+      "text_style": "secondary"
     }
   ]
 }
