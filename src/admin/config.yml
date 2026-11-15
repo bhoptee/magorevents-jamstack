@@ -49,11 +49,11 @@ collections:
                 name: "has_video"
                 widget: "boolean"
                 default: false
-              - label: "Video URL"
+              - label: "Video"
                 name: "video_src"
-                widget: "string"
+                widget: "file"
                 required: false
-                hint: "Full URL to the .mp4 file. Leave blank if no video."
+                hint: "Upload or choose an .mp4 file. Leave blank if no video."
               - label: "Text Style"
                 name: "text_style"
                 widget: "select"
