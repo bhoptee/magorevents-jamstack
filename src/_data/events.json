@@ -3,6 +3,20 @@
     {
       "video_src": "",
       "show_involved": true,
+      "name": "Frost Fayre",
+      "show_ads": false,
+      "date": "Saturday 5th December, 2026",
+      "featured_home": true,
+      "show_stalls": true,
+      "has_video": false,
+      "id": "frost-fayre-2026",
+      "description": "We're thrilled to announce that we'll be back in Magor Square for our annual Frost Fayre on Saturday 5th December. Hope to see you all there!",
+      "bg_class": "bg-hero-frost",
+      "text_style": "secondary"
+    },
+    {
+      "video_src": "",
+      "show_involved": true,
       "name": "May Fayre",
       "show_ads": true,
       "date": "Monday 4th May, 2026",
@@ -13,20 +27,6 @@
       "description": "We're thrilled to announce that we'll be back in Magor Square for our annual May Fayre on Monday 4th May. Hope to see you all there!",
       "bg_class": "bg-hero-may",
       "text_style": "default"
-    },
-    {
-      "video_src": "",
-      "show_involved": true,
-      "name": "Frost Fayre",
-      "show_ads": true,
-      "date": "Saturday 5th December, 2026",
-      "featured_home": true,
-      "show_stalls": true,
-      "has_video": false,
-      "id": "frost-fayre-2026",
-      "description": "We're thrilled to announce that we'll be back in Magor Square for our annual Frost Fayre on Saturday 5th December. Hope to see you all there!",
-      "bg_class": "bg-hero-frost",
-      "text_style": "secondary"
     }
   ]
 }
